@@ -1,0 +1,41 @@
+{% extends "finance/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Financial Reports</h2>
+
+    <div class="row">
+        <!-- Monthly Report Card -->
+        <div class="col-md-6">
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-success text-white text-center">
+                    <h4>Monthly Report</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Total Income:</strong> ₹{{ monthly_income }}</p>
+                    <p><strong>Total Expenses:</strong> ₹{{ monthly_expenses }}</p>
+                    <p><strong>Savings:</strong> ₹{{ monthly_savings }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yearly Report Card -->
+        <div class="col-md-6">
+            <div class="card shadow-lg mb-4">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Yearly Report</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Total Income:</strong> ₹{{ yearly_income }}</p>
+                    <p><strong>Total Expenses:</strong> ₹{{ yearly_expenses }}</p>
+                    <p><strong>Savings:</strong> ₹{{ yearly_savings }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Transactions</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "finance/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Welcome to Your Personal Finance Manager</h1>
+    <p class="text-center">Manage your finances easily and effectively.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Track Expenses</h5>
+                    <p class="card-text">Keep track of your daily expenses to manage your budget better.</p>
+                    <a href="{% url 'track_expenses' %}" class="btn btn-primary">Track Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Set Budgets</h5>
+                    <p class="card-text">Create and manage your budgets to stay on top of your finances.</p>
+                    <a href="{% url 'set_budget' %}" class="btn btn-primary">Set Budget</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Generate Reports</h5>
+                    <p class="card-text">Get insights into your spending habits and financial health.</p>
+                    <a href="{% url 'financial_report' %}" class="btn btn-primary">View Reports</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

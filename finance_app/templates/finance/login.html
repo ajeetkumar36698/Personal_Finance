@@ -1,0 +1,18 @@
+{% extends "finance/base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
+        <div class="card-body">
+            <h2 class="text-center mb-8">Login</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+            <div class="text-center mt-3">
+                <small>Don't have an account? <a href="{% url 'register' %}">Register here</a></small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

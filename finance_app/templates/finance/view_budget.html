@@ -1,0 +1,38 @@
+{% extends 'finance/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">View Budget</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>Category</th>
+                    <th>Monthly Budget</th>
+                    <th>Total Spent</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in budget_data %}
+                <tr>
+                    <td>{{ data.category }}</td>
+                    <td>₹{{ data.monthly_budget }}</td>
+                    <td>₹{{ data.total_spent }}</td>
+                    <td class="text-center">
+                        {% if data.exceeded %}
+                        <span class="badge bg-danger">Exceeded</span>
+                        {% else %}
+                        <span class="badge bg-success">Within Limit</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center mt-4">
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Transactions</a>
+    </div>
+</div>
+{% endblock %}

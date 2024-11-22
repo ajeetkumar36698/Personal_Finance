@@ -1,0 +1,16 @@
+<h2>Transactions</h2>
+<a href="{% url 'add_transaction' %}">Add New Transaction</a>
+<ul>
+    {% for transaction in transactions %}
+        <li>
+            {{ transaction.date }} - {{ transaction.transaction_type }} - {{ transaction.category }} - 
+            {{ transaction.amount }} 
+            <a href="{% url 'update_transaction' transaction.id %}">Edit</a> 
+            <a href="{% url 'delete_transaction' transaction.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<h2>Transactions</h2>
+<a href="{% url 'add_transaction' %}">Add New Transaction</a>
+<a href="{% url 'financial_report' %}">View Financial Reports</a>
+
